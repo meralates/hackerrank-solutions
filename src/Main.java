@@ -1,51 +1,19 @@
+import java.math.BigInteger;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
-
-    static class Prime{
-        public void checkPrime(int...numbers)
-        {
-            boolean isFirst=true;
-            for (int num : numbers){
-                if (isPrime(num)){
-                    if (!isFirst){
-                        System.out.print(" ");
-                    }
-                    System.out.print(num);
-                    isFirst=false;
-                }
-            }
-            System.out.println();
-        }
-        private boolean isPrime(int num){
-            if (num<2){
-                return false;
-            }
-            for (int i = 2; i <= Math.sqrt(num); i++){
-                if (num%i==0){
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
     public static void main(String[] args) {
-        Prime prime = new Prime();
-        Scanner scanner = new Scanner(System.in);
+         Scanner scanner = new Scanner(System.in);
+         String a = scanner.nextLine();
+         String b = scanner.nextLine();
 
-        int num1 = scanner.nextInt();
-        int num2 = scanner.nextInt();
-        int num3 = scanner.nextInt();
-        int num4 = scanner.nextInt();
-        int num5 = scanner.nextInt();
+        BigInteger num1 = new BigInteger(a);
+        BigInteger num2 = new BigInteger(b);
 
-        prime.checkPrime(num1);
-        prime.checkPrime(num1,num2);
-        prime.checkPrime(num1,num2,num3);
-        prime.checkPrime(num1,num2,num3,num4,num5);
+        BigInteger sum = num1.add(num2);
+        BigInteger product = num1.multiply(num2);
+        System.out.println(sum);
+        System.out.println(product);
 
-        scanner.close();
     }
 }
