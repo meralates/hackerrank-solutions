@@ -5,19 +5,19 @@ import java.util.regex.Pattern;
 public class Main {
 
     static class Prime{
-        public void checkPrime(int...numbers) //birden fazla int alacak
+        public void checkPrime(int...numbers)
         {
             boolean isFirst=true;
             for (int num : numbers){
                 if (isPrime(num)){
                     if (!isFirst){
-                        System.out.print(" "); //ilk sayıda boşluk olmaması için
+                        System.out.print(" ");
                     }
-                    System.out.println(num);//asalları yazdırır
+                    System.out.print(num);
                     isFirst=false;
                 }
             }
-            System.out.println(); //metod sonrası yeni satır
+            System.out.println();
         }
         private boolean isPrime(int num){
             if (num<2){
