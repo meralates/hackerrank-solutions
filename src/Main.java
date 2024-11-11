@@ -1,19 +1,17 @@
-import java.math.BigInteger;
 import java.util.Scanner;
-
+//https://www.hackerrank.com/challenges/java-stdin-stdout/problem?isFullScreen=true
 public class Main {
+
     public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in);
-         String a = scanner.nextLine();
-         String b = scanner.nextLine();
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
 
-        BigInteger num1 = new BigInteger(a);
-        BigInteger num2 = new BigInteger(b);
+        double d = scan.nextDouble();
+        scan.nextLine();
+        String s = scan.nextLine();
 
-        BigInteger sum = num1.add(num2);
-        BigInteger product = num1.multiply(num2);
-        System.out.println(sum);
-        System.out.println(product);
-
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
     }
 }
