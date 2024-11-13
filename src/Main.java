@@ -1,16 +1,16 @@
-import java.io.*;
-import java.util.*;
-//https://www.hackerrank.com/challenges/java-end-of-file/problem?isFullScreen=true
+import java.util.Scanner;
+//https://hackerrank.com/challenges/java-regex/problem?isFullScreen=true
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int lineNumber = 1;
-
-        while (scanner.hasNext()) {
-            String line = scanner.nextLine();
-            System.out.println(lineNumber + " " + line);
-            lineNumber++;
+        Scanner in = new Scanner(System.in);
+        while (in.hasNextLine()) {
+            String IP = in.next();
+            System.out.println(IP.matches(new MyRegex().pattern));
         }
-        scanner.close();
+        in.close();
     }
+}
+class MyRegex {
+    String pattern = "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}" +
+                     "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
 }
