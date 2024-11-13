@@ -1,26 +1,16 @@
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.Scanner;
-
-//https://www.hackerrank.com/challenges/java-bigdecimal/problem?isFullScreen=true
+import java.io.*;
+import java.util.*;
+//https://www.hackerrank.com/challenges/java-end-of-file/problem?isFullScreen=true
 public class Main {
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String[] s = new String[n];
-        for (int i = 0; i < n; i++) {
-            s[i] = sc.next();
-        }
-        sc.close();
+        Scanner scanner = new Scanner(System.in);
+        int lineNumber = 1;
 
-        Arrays.sort(s,0,n,(a,b)->{
-            BigDecimal bd1 = new BigDecimal(a);
-            BigDecimal bd2 = new BigDecimal(b);
-            return bd2.compareTo(bd1);
-        });
-        for (int i = 0; i < n; i++) {
-            System.out.println(s[i]);
+        while (scanner.hasNext()) {
+            String line = scanner.nextLine();
+            System.out.println(lineNumber + " " + line);
+            lineNumber++;
         }
+        scanner.close();
     }
 }
