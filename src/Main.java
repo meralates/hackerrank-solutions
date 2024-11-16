@@ -1,22 +1,18 @@
+import java.time.LocalDate;
 import java.util.Scanner;
-//https://www.hackerrank.com/challenges/valid-username-checker/problem?isFullScreen=true
-
-class UsernameValidator {
-    public static final String regularExpression = "^[a-zA-Z][a-zA-Z0-9_]{7,29}$";
-}
+//https://www.hackerrank.com/challenges/java-date-and-time/problem?isFullScreen=true
 public class Main {
-    private static final Scanner scan = new Scanner(System.in);
-
     public static void main(String[] args) {
-        int n = Integer.parseInt(scan.nextLine());
-        while (n-- != 0) {
-            String username = scan.nextLine();
+        Scanner scanner = new Scanner(System.in);
 
-            if (username.matches(UsernameValidator.regularExpression)) {
-                System.out.println("Valid");
-            }else{
-                System.out.println("Invalid");
-            }
-        }
+        int month=scanner.nextInt();
+        int day=scanner.nextInt();
+        int year=scanner.nextInt();
+
+        LocalDate date=LocalDate.of(year,month,day); //belirtilen tarihi oluştur
+
+        String dayOfWeek=date.getDayOfWeek().toString();
+        System.out.println(dayOfWeek);
+        scanner.close();
     }
 }
