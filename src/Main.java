@@ -1,21 +1,25 @@
 import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-//
+//https://www.hackerrank.com/challenges/java-static-initializer-block/problem?isFullScreen=true
 public class Main {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int testCases = Integer.parseInt(in.nextLine());
-        while (testCases > 0) {
-            String pattern = in.nextLine();
-            try{
-                Pattern.compile(pattern);
-                System.out.println("valid");
-            } catch (PatternSyntaxException e) {
-                System.out.println("invalid");
-            }
-            testCases--;
+    static int breadth;
+    static int height; //mainde de kullanabilmek icin static
+    static boolean flag = true;
+    static {
+        Scanner sc = new Scanner(System.in);
+        breadth = sc.nextInt();
+        height = sc.nextInt();
+
+        if(breadth<=0||height<=0){
+            flag = false;
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+
         }
-        in.close();
+    }
+    public static void main(String[] args) {
+        if(flag){
+            int area=breadth*height;
+            System.out.println(area);
+        }
+
     }
 }
